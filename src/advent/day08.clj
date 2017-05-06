@@ -12,7 +12,7 @@
    grammar
    :auto-whitespace :standard))
 
-(defn transform [tree]
+(defn parse [expr]
   (insta/transform {:row (fn [x y]
                            [:row
                             {:y (Integer/parseInt (second x))
@@ -21,10 +21,8 @@
                               [:column
                                {:x (Integer/parseInt (second x))
                                 :delta (Integer/parseInt (second (second y)))}])
-                    :axis (fn [x] x)
-                    :cmd (fn [x] x)
                     :size (fn [x y]
                             (zipmap
                              [:x :y]
                              (into [] (map #(Integer/parseInt (second %)) [x y]))))}
-                   tree))
+                   (dsl expr)))
