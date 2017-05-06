@@ -1,6 +1,9 @@
 cmd = rect | rotate
-rect = 'rect' size
-rotate = 'rotate' axis
+rect = <'rect'> size
+rotate = <'rotate'> axis
 size = num <'x'> num
-axis = 'row' <'y='> num <'by'> num | 'column' <'x='> num <'by'> num
+axis = row | column
+row = <'row y='> num delta
+column = <'column x='> num delta
+delta = <'by'> num
 num = #"\d+"
