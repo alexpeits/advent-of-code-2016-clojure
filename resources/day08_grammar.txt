@@ -1,0 +1,7 @@
+S = A | B
+A = 'rect' Z
+B = 'rotate' R
+Z = N <'x'> N
+R = 'row' <'y='> N <'by'> N | 'column' <'x='> N <'by'> N
+N = #"\d+"
+C = #"x|y"
