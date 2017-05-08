@@ -1,0 +1,8 @@
+cmd = take | give
+take = <'value'> num <'goes to'> bot
+give = bot <'gives'> low <'and'> high
+low = <'low to'> (bot|output)
+high = <'high to'> (bot|output)
+bot = <'bot'> num
+output = <'output'> num
+num = #"\d+"
